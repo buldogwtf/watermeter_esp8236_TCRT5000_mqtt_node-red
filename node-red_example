@@ -1,0 +1,202 @@
+[
+    {
+        "id": "e36d7dea.d1d23",
+        "type": "mqtt in",
+        "z": "851f30e7.a2bc8",
+        "name": "Water",
+        "topic": "home/motion/water/status",
+        "qos": "2",
+        "broker": "12088b5.2fcdd75",
+        "x": 225,
+        "y": 576,
+        "wires": [
+            [
+                "23d291a1.2698ae"
+            ]
+        ]
+    },
+    {
+        "id": "906e094b.61dbd8",
+        "type": "ui_text",
+        "z": "851f30e7.a2bc8",
+        "group": "90c2bba6.1e2dd8",
+        "order": 14,
+        "width": "4",
+        "height": "1",
+        "name": "Water",
+        "label": "Water",
+        "format": "{{msg.payload}} Liter",
+        "layout": "row-left",
+        "x": 793,
+        "y": 555,
+        "wires": []
+    },
+    {
+        "id": "7709de5b.63dd8",
+        "type": "inject",
+        "z": "851f30e7.a2bc8",
+        "name": "reset",
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "repeat": "",
+        "crontab": "00 00 * * *",
+        "once": false,
+        "onceDelay": "",
+        "x": 226,
+        "y": 629,
+        "wires": [
+            [
+                "732bfe71.d1182"
+            ]
+        ]
+    },
+    {
+        "id": "23d291a1.2698ae",
+        "type": "function",
+        "z": "851f30e7.a2bc8",
+        "name": "msg object",
+        "func": "msg.increment = 0;\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 415,
+        "y": 576,
+        "wires": [
+            [
+                "d6595d62.9f569"
+            ]
+        ]
+    },
+    {
+        "id": "732bfe71.d1182",
+        "type": "function",
+        "z": "851f30e7.a2bc8",
+        "name": "msg object",
+        "func": "msg.reset = 0;\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 417,
+        "y": 631,
+        "wires": [
+            [
+                "d6595d62.9f569"
+            ]
+        ]
+    },
+    {
+        "id": "d6595d62.9f569",
+        "type": "counter",
+        "z": "851f30e7.a2bc8",
+        "name": "",
+        "init": "0",
+        "step": "0",
+        "lower": "",
+        "upper": "",
+        "mode": "increment",
+        "outputs": 2,
+        "x": 631,
+        "y": 602,
+        "wires": [
+            [
+                "906e094b.61dbd8",
+                "c16c8b8a.9206f8",
+                "ab6109e0.876df8"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "c16c8b8a.9206f8",
+        "type": "debug",
+        "z": "851f30e7.a2bc8",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "x": 809,
+        "y": 622,
+        "wires": []
+    },
+    {
+        "id": "ab6109e0.876df8",
+        "type": "ui_chart",
+        "z": "851f30e7.a2bc8",
+        "name": "",
+        "group": "90c2bba6.1e2dd8",
+        "order": 15,
+        "width": "0",
+        "height": "0",
+        "label": "Water",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "",
+        "ymax": "",
+        "removeOlder": "4",
+        "removeOlderPoints": "",
+        "removeOlderUnit": "604800",
+        "cutout": 0,
+        "useOneColor": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "useOldStyle": false,
+        "x": 789,
+        "y": 500,
+        "wires": [
+            [],
+            []
+        ]
+    },
+    {
+        "id": "12088b5.2fcdd75",
+        "type": "mqtt-broker",
+        "z": "",
+        "name": "",
+        "broker": "localhost",
+        "port": "1883",
+        "clientid": "",
+        "usetls": false,
+        "compatmode": true,
+        "keepalive": "60",
+        "cleansession": true,
+        "willTopic": "",
+        "willQos": "0",
+        "willPayload": "",
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthPayload": ""
+    },
+    {
+        "id": "90c2bba6.1e2dd8",
+        "type": "ui_group",
+        "z": "",
+        "name": "Systeem",
+        "tab": "902ffad6.38cf58",
+        "order": 1,
+        "disp": true,
+        "width": "6",
+        "collapse": false
+    },
+    {
+        "id": "902ffad6.38cf58",
+        "type": "ui_tab",
+        "z": "",
+        "name": "Domotica",
+        "icon": "dashboard",
+        "order": 1
+    }
+]
