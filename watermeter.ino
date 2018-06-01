@@ -35,12 +35,12 @@
 #define MQTT_VERSION MQTT_VERSION_3_1_1
 
 // Wifi: SSID and password
-const PROGMEM char* WIFI_SSID = "Bulldog";
-const PROGMEM char* WIFI_PASSWORD = "Theodoor01";
+const PROGMEM char* WIFI_SSID = "SSID";
+const PROGMEM char* WIFI_PASSWORD = "Password";
 
 // MQTT: ID, server IP, port, username and password
 const PROGMEM char* MQTT_CLIENT_ID = "office_motion";
-const PROGMEM char* MQTT_SERVER_IP = "192.168.2.150";
+const PROGMEM char* MQTT_SERVER_IP = "mqtt_ip_address";
 const PROGMEM uint16_t MQTT_SERVER_PORT = 1883;
 const PROGMEM char* MQTT_USER = "";
 const PROGMEM char* MQTT_PASSWORD = "";
