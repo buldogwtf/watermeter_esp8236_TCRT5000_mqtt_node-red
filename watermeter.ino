@@ -101,12 +101,16 @@ void setup() {
   Serial.println(WIFI_SSID);
   WiFi.mode(WIFI_STA);
   WiFi.begin(WIFI_SSID, WIFI_PASSWORD);
+   
+  // info for fixed ip address if needed, remove for dhcp
+   
   IPAddress ip(192,168,2,204);   
   IPAddress gateway(192,168,2,254);   
   IPAddress subnet(255,255,255,0);   
   WiFi.config(ip, gateway, subnet);
 
-
+   // end for fixed ip address
+   
   while (WiFi.status() != WL_CONNECTED) {
     delay(500);
     Serial.print(".");
