@@ -149,6 +149,6 @@ void loop() {
      Serial.println("Motion Detected");
     m_pir_state = LOW;
     }
-     delay(1000); >small delay for when te sensor stops at metal
+     delay(1000); //small delay for when te sensor stops at metal
  }
 }
