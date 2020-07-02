@@ -20,7 +20,7 @@
       platform: mqtt
       state_topic: 'home/motion/water/status'
       name: 'Motion'
-      sensor_class: motion
+      device_class: motion
       
    Versions:
    Samuel M. - v1.1 - 08.2016
